@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.0.1.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+    <script>
+        /*jshint esversion: 6*/
+        QUnit.test('Step 5 (OPTIONAL): Setting scope', function (assert) {
+            var done = assert.async();
+            navigator.serviceWorker.getRegistration('../below/')
+                .then((reg) => {
+                    if (!reg) {
+                        assert.ok(false, 'There is a service worker is registered');
+                        done();
+                    } else {
+                        assert.ok(~reg.scope.indexOf('below'), 'Service worker scope at below/');
+                        done();
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>
