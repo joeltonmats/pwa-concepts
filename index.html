@@ -25,6 +25,8 @@
 
     <a href="below/another.html">Another page</a>
 
+    <div class="img-wrapper"></div>
+
     <script>
         (function () {
             'use strict';
@@ -34,15 +36,23 @@
                 return;
             }
 
-            navigator.serviceWorker.register('service-worker.js', {
-                scope: '/below/'
-            })
+            navigator.serviceWorker.register('service-worker.js')
                 .then(function (registration) {
                     console.log('Registered at scope:', registration.scope);
                 })
                 .catch(function (error) {
                     console.log('Registration failed:', error);
                 });
+
+            setTimeout(() => {
+                var img = new Image();
+                img.src = '/img/dog.jpeg';
+                img.width = 100;
+                img.height = 100;
+
+                var imgWrapper = document.getElementsByClassName('img-wrapper');
+                imgWrapper[0].appendChild(img);
+            }, 3000);
         })();
     </script>
 
