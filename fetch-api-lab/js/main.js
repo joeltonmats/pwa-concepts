@@ -17,28 +17,40 @@ var app = (function () {
 
     function fetchJSON() {
         fetch('examples/animals.json')
+            .then(validateResponse)
+            .then(readResponseAsJSON)
             .then(logResult)
             .catch(logError);
     }
 
     function validateResponse(response) {
-        // TODO 2.3
+        if (!response.ok)
+            throw Error(response.statusText);
+        return response;
     }
 
     function readResponseAsJSON(response) {
-        // TODO 2.4
+        return response.json();
     }
 
     function showImage(responseAsBlob) {
-        //  TODO 3a
+        var container = document.getElementById('container');
+        var imgElem = document.createElement('img');
+        container.appendChild(imgElem);
+        var imgUrl = URL.createObjectURL(responseAsBlob);
+        imgElem.src = imgUrl;
     }
 
     function readResponseAsBlob(response) {
-        // TODO 3b
+        return response.blob();
     }
 
     function fetchImage() {
-        // TODO 3c
+        fetch('examples/kitten.jpg')
+            .then(validateResponse)
+            .then(readResponseAsBlob)
+            .then(showImage)
+            .catch(logError);
     }
 
     function showText(responseAsText) {
