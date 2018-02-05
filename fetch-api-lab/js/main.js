@@ -54,31 +54,65 @@ var app = (function () {
     }
 
     function showText(responseAsText) {
-        //  TODO 4a
+        var message = document.getElementById('message');
+        message.textContent = responseAsText;
     }
 
     function readResponseAsText(response) {
-        // TODO 4b
+        return response.text();
     }
 
     function fetchText() {
-        // TODO 4c
+        fetch('examples/words.txt')
+            .then(validateResponse)
+            .then(readResponseAsText)
+            .then(showText)
+            .catch(logError);
     }
 
     function headRequest() {
-        // TODO 5.1
+        fetch('examples/words.txt', {
+            method: 'HEAD'
+        })
+            .then(validateResponse)
+            .then(logSize)
+            .then(readResponseAsText)
+            .then(showText)
+            .then(logResult)
+            .catch(logError);
     }
 
     function logSize(response) {
-        // TODO 5.2
+        var size = response.headers.get('content-length');
+        console.log('size of the file: ', size);
+
+        return response;
     }
 
     /* NOTE: Never send unencrypted user credentials in production! */
     function postRequest() {
-        // TODO 6.2
+        var formData = new FormData(document.getElementById('myForm'));
+
+        // server side with cors
+        /* fetch('http://localhost:5000/', {
+            method: 'POST',
+            body: formData
+        })
+            .then(validateResponse)
+            .then(readResponseAsText)
+            .then(logResult)
+            .catch(logError); */
+
+        // server side no cors
+        fetch('http://localhost:5001/', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+            .then(logResult)
+            .catch(logError);
     }
 
-    // Don't worry if you don't understand this, it's not part of the Fetch API.
     // We are using the JavaScript Module Pattern to enable unit testing of
     // our functions.
     return {
