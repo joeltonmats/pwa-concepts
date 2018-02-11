@@ -15,4 +15,4 @@ $project_folder http-server -p 8080 -a localhost -c 0
 
 ## References
 
-*  https://github.com/google-developer-training/pwa-training-labs/tree/master/lighthouse-lab
+*  https://github.com/google-developer-training/pwa-training-labs/
