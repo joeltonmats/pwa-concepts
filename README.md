@@ -16,6 +16,7 @@ $project_folder http-server -p 8080 -a localhost -c 0
 ## References
 
 *  https://github.com/google-developer-training/pwa-training-labs/tree/master/indexed-db-lab/app
+*  https://github.com/udacity/ud811/tree/master/2-36
 
 
 
