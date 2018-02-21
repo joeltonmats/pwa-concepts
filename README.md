@@ -3,15 +3,16 @@ This repository was made to learn progressive web apps concepts.
 
 # Pre requirements
 
+* [Nodejs](https://nodejs.org/en/download/)
+
 * Nodejs
 # How to run ?
 
-* [Nodejs](https://nodejs.org/en/download/)
-* To run a simple server you can install http-server npm package globally
+* To run a simple server you can install a http-server npm package globally:
 
 <pre>
 <code>
-    npm install http-server -g
+npm install http-server -g
 </code>
 </pre>
 
@@ -21,15 +22,15 @@ This repository was made to learn progressive web apps concepts.
 
 <pre>
 <code>
-    $google-concepts http-server -p 8080 -a localhost -c 0
+google-concepts$ http-server -p 8080 -a localhost -c 0
 </code>
 </pre>
 
-* Then, open your browser on specified port, i.e http://localhost:8080
+* Then, open your browser on specified port, i.e http://localhost:8080 and choose your desire subfolder.
 
 ## Running samples examples in udacity-concepts
 
-If you desire execute a native javascript solution, just start a local server how explained above
+If you desire execute a native javascript solution, just start a local server how explained above in native-javascript-solution folder
 
 * Inside sw-preache-solution
 * Download the dependecies and start the project
