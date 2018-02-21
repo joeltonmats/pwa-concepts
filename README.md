@@ -48,9 +48,11 @@ $sw-preache-solution gulp default
 
 ## References
 
-*  https://github.com/google-developer-training/pwa-training-labs
-*  https://github.com/udacity/ud811/tree/master
-*  Manifest Validador -  https://manifest-validator.appspot.com/
+* Google Site Path - https://developers.google.com/web/ilt/pwa/ 
+* Google trainning github - https://github.com/google-developer-training/pwa-training-labs
+* Udacity Intro Course PWA - https://br.udacity.com/course/intro-to-progressive-web-apps--ud811
+* Udacity github project https://github.com/udacity/ud811/tree/master
+* Manifest Validador -  https://manifest-validator.appspot.com/
 
 
 
