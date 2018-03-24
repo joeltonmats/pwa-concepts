@@ -37,6 +37,7 @@ function createCard() {
   cardTitle.style.backgroundImage = 'url("/src/images/natural2.jpg")';
   cardTitle.style.backgroundSize = 'cover';
   cardTitle.style.height = '180px';
+  cardTitle.style.color = 'red';
   cardWrapper.appendChild(cardTitle);
   var cardTitleTextElement = document.createElement('h2');
   cardTitleTextElement.className = 'mdl-card__title-text';
