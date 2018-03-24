@@ -29,6 +29,7 @@ shareImageButton.addEventListener('click', openCreatePostModal);
 
 closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
 
+// currently not use, allows to save assets cache on demand
 function onSaveButtonClicked(event) {
   console.log('clicked');
   if ('caches' in window) {
@@ -59,9 +60,10 @@ function createCard() {
   cardSupportingText.textContent = 'In San Francisco';
   cardSupportingText.style.textAlign = 'center';
 
-  var cardSaveButton = document.createElement('button');
+  // used to cache on demand
+  /*var cardSaveButton = document.createElement('button');
   cardSaveButton.textContent = 'Save';
-  cardSaveButton.addEventListener('click', onSaveButtonClicked);
+  cardSaveButton.addEventListener('click', onSaveButtonClicked);*/
 
   cardSupportingText.appendChild(cardSaveButton);
   cardWrapper.appendChild(cardSupportingText);
